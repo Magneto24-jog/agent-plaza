@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Plaza — Alun-alun Holder Agent ID</title>
+<link rel="stylesheet" href="styles.css">
+<!--
+  Agent Plaza — frontend STATIS (GitHub Pages-ready). Tanpa backend, tanpa server,
+  tanpa database, tanpa penyimpanan sesi login.
+  - Connect wallet BIASA saja (MetaMask / Binance Wallet biasa, injected).
+    TIDAK ADA login QR Agentic Wallet di sini — itu dilarang aturan hackathon.
+  - Semua transaksi harus dikonfirmasi user sendiri di wallet-nya. Tidak ada auto-sign.
+  - Kontrak TIDAK menyimpan seed / private key / pairing code apa pun.
+-->
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+<script src="abi.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>🏛️ Agent Plaza</h1>
+  <p class="sub">Alun-alun on-chain khusus pemegang Agent ID. Check-in harian, wall pesan, tip, dan reputasi — semua terbukti lewat <code>.ai</code> kamu, bukan janji.</p>
+  <p class="warn">⚠️ Bukan produk Binance. Tidak ada token baru, tidak ada hadiah yang dijanjikan, tidak ada passive income. Semua aksi di sini butuh gas BNB kecil dan konfirmasi kamu sendiri di wallet.</p>
+</header>
+
+<section id="connect-box" class="card">
+  <h2>1. Connect Wallet</h2>
+  <p>Pakai wallet biasa (MetaMask / Binance Wallet). Jangan scan QR Agentic di website mana pun.</p>
+  <button id="btn-connect">Connect Wallet</button>
+  <span id="network">Jaringan: —</span>
+  <p id="account">Belum connect.</p>
+  <p id="holder-status">Status Agent ID: —</p>
+  <p id="ai-name">Nama .ai: —</p>
+</section>
+
+<section id="checkin-box" class="card">
+  <h2>2. Check-in Harian</h2>
+  <p>1x per hari UTC. Streak naik kalau check-in tiap hari, reset kalau bolos 1 hari. 30 holder pertama jadi <strong>Founding 30</strong> permanen.</p>
+  <p id="founder-progress">Founding: — / 30</p>
+  <p id="my-streak">Streak saya: —</p>
+  <button id="btn-checkin" disabled>Check-in Hari Ini</button>
+  <p id="checkin-msg" class="msg"></p>
+</section>
+
+<section id="wall-box" class="card">
+  <h2>3. Wall Pesan</h2>
+  <p>Hanya holder yang bisa posting. Maks 280 karakter, jeda 60 detik antar posting.</p>
+  <textarea id="post-text" maxlength="280" rows="3" placeholder="Tulis pesanmu (maks 280 karakter)…" disabled></textarea><br>
+  <button id="btn-post" disabled>Posting ke Wall</button>
+  <p id="post-msg" class="msg"></p>
+  <h3>Pesan terbaru</h3>
+  <button id="btn-refresh">Muat Ulang Wall</button>
+  <ul id="wall"></ul>
+</section>
+
+<section id="tip-box" class="card">
+  <h2>4. Tip Holder Lain</h2>
+  <p>Kirim BNB langsung ke holder lain. 100% diteruskan kontrak, 0 fee, 0 kustodi. Penerima harus holder juga. Klik alamat di wall untuk mengisi otomatis.</p>
+  <input id="tip-to" placeholder="Alamat penerima (0x…)" size="46">
+  <input id="tip-amount" placeholder="Jumlah BNB, misal 0.001" size="18">
+  <button id="btn-tip" disabled>Kirim Tip</button>
+  <p id="tip-msg" class="msg"></p>
+</section>
+
+<section id="board-box" class="card">
+  <h2>5. Board Reputasi &amp; Founding 30</h2>
+  <p>Skor = streak×10 + total check-in×5 + vouch diterima×20 + jumlah tip diterima×15. Skor ini BUKAN token dan BUKAN hadiah — cuma papan peringkat.</p>
+  <button id="btn-board">Muat Board</button>
+  <ol id="board"></ol>
+  <h3>Vouch</h3>
+  <p>Vouch 1x untuk 1 holder lain. Tidak bisa vouch diri sendiri / 2x.</p>
+  <input id="vouch-to" placeholder="Alamat holder yang di-vouch (0x…)" size="46">
+  <button id="btn-vouch" disabled>Vouch</button>
+  <p id="vouch-msg" class="msg"></p>
+</section>
+
+<footer>
+  <p>Kontrak Agent Plaza: <code id="contract-addr">TBD — belum deploy</code> | Agent ID: <code>0x60b9262456de011f7d15a54cdd8c48baaa8b022f</code> (BSC) | <a href="https://github.com/">Kode open-source</a> (isi link repo setelah publish)</p>
+  <p>Butuh bantuan? Baca README.md di repo. Jangan pernah kirim seed phrase / private key ke siapa pun, termasuk ke website ini.</p>
+</footer>
+</body>
+</html>
