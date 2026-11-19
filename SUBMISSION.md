@@ -71,7 +71,8 @@
 ## 4. Bukti verifikasi lokal (sudah dilakukan 19 Nov 2026)
 
 - Compile: solc **0.8.38+commit.1835d247** (koreksi: laporan awal bilang 0.8.26 dari `package.json`, tapi `solc.version()` di VM ini 0.8.38 — Sourcify exact_match membuktikan 0.8.38 yang benar), optimizer 200, evmVersion paris — OK, bytecode 8.432 byte, 0 error.
-- Sourcify: **VERIFIED exact_match** (creation + runtime) 19 Nov 2026 09:11:50 UTC, cek di `https://repo.sourcify.dev/56/0x8aeF6CF342768F3343484347aB89ae64e0F3Fe46`. Verifikasi BscScan native masih dicek (halaman BscScan dibaca via browser, 19 Nov ~17:12 SGT).
+- Sourcify: **VERIFIED exact_match** (creation + runtime) 19 Nov 2026 09:11:50 UTC, cek di `https://repo.sourcify.dev/56/0x8aeF6CF342768F3343484347aB89ae64e0F3Fe46`.
+- BscScan: **VERIFIED — "Source Code Verified", badge "Exact Match"**, dicek langsung via browser 19 Nov 2026 17:12 SGT (tab Contract > Code): compiler v0.8.38+commit.1835d247, Optimization "Yes with 200 runs", Other Settings "paris EvmVersion", License "-NA-", format "Solidity Standard Json-Input" (AgentPlaza.sol + settings.json), creator 0xDd56192e…2f07859B8Ee4313D109d1b10F4C5a704, saldo kontrak 0 BNB. Tidak ada penyebutan Sourcify di halaman — verifikasi tampil sebagai verifikasi BscScan native. Cek: `https://bscscan.com/address/0x8aeF6CF342768F3343484347aB89ae64e0F3Fe46#code`
 - Test: `npm test` — **36/36 PASS, 0 FAIL, 3x run konsisten** (Ganache in-memory).
   Mencakup: non-holder ditolak (4 test), check-in 1x/hari + streak + reset bolos,
   posting + cooldown + max 280, tip penuh 0,01 BNB tanpa fee, vouch 1x,
