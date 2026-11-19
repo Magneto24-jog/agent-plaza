@@ -70,7 +70,8 @@
 
 ## 4. Bukti verifikasi lokal (sudah dilakukan 19 Nov 2026)
 
-- Compile: solc 0.8.26, optimizer 200, evmVersion paris — OK, bytecode 8.432 byte, 0 error.
+- Compile: solc **0.8.38+commit.1835d247** (koreksi: laporan awal bilang 0.8.26 dari `package.json`, tapi `solc.version()` di VM ini 0.8.38 — Sourcify exact_match membuktikan 0.8.38 yang benar), optimizer 200, evmVersion paris — OK, bytecode 8.432 byte, 0 error.
+- Sourcify: **VERIFIED exact_match** (creation + runtime) 19 Nov 2026 09:11:50 UTC, cek di `https://repo.sourcify.dev/56/0x8aeF6CF342768F3343484347aB89ae64e0F3Fe46`. Verifikasi BscScan native masih dicek (halaman BscScan dibaca via browser, 19 Nov ~17:12 SGT).
 - Test: `npm test` — **36/36 PASS, 0 FAIL, 3x run konsisten** (Ganache in-memory).
   Mencakup: non-holder ditolak (4 test), check-in 1x/hari + streak + reset bolos,
   posting + cooldown + max 280, tip penuh 0,01 BNB tanpa fee, vouch 1x,
