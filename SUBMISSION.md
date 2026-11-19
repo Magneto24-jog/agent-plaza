@@ -14,11 +14,11 @@
 | Field | Isi |
 |---|---|
 | Project name | Agent Plaza |
-| Website | TBD — GitHub Pages `frontend/` (isi URL setelah publish, mis. `https://<user>.github.io/agent-plaza/`) |
+| Website | **https://magneto24-jog.github.io/agent-plaza/** — LIVE 19 Nov 2026 ~17:17 SGT, Pages status "built", semua aset 200 (index 4.068 B, app.js berisi alamat kontrak deploy). |
 | Contract address(es) (BSC) | **0x8aeF6CF342768F3343484347aB89ae64e0F3Fe46** — deployed 19 Nov 2026 ~17:07 SGT, tx 0xdc66871bded75a431922bb5e4f5724ad56fdd85d011e1ef799efd65f891fb06d, deployer burner 0xDd56192e2f07859B8Ee4313D109d1b10F4C5a704 (didanai 0.0005 BNB dari wallet Magneto, tx funding 0x7ce30a2fc719627d7b889d5f6d02a5acbc90abe8f47c5140f13729e6e13c92a0, gas deploy 1,834,690, biaya ~0.0000917 BNB ~$0.05). **JANGAN isi alamat MockAgentID.** |
 | Agent ID | magneto98.ai (pemilik proyek) |
 | Wallet / reward receiving address | 0x3DcC0E7257ebdcF156C599761C199AA69Ede067a (BSC) — verifikasi ulang sebelum submit |
-| Repository (open-source) | TBD — isi URL GitHub repo setelah publish (kode di `~/workspace/agent-plaza/`) |
+| Repository (open-source) | **https://github.com/Magneto24-jog/agent-plaza** — publik, dibuat + push 19 Nov 2026 ~17:16 SGT via `gh` (login Magneto24-jog), 4 commit. Pages dari folder `docs/` (salinan `frontend/`, karena API Pages hanya izinkan path `/` atau `/docs`). |
 | Deskripsi singkat | Alun-alun on-chain khusus pemegang Agent ID: check-in harian + wall pesan + tip langsung + board reputasi. Tanpa token, tanpa kustodi, tanpa server. |
 
 ## 2. Deskripsi pemakaian Agent ID (untuk form submit — bisa copas, sesuaikan)
