@@ -1,0 +1,9 @@
+{
+  "network": "BSC mainnet (56)",
+  "contract": "AgentPlaza",
+  "address": "0x8aeF6CF342768F3343484347aB89ae64e0F3Fe46",
+  "deployTxHash": "0xdc66871bded75a431922bb5e4f5724ad56fdd85d011e1ef799efd65f891fb06d",
+  "deployer": "0xDd56192e2f07859B8Ee4313D109d1b10F4C5a704",
+  "agentId": "0x60b9262456de011f7d15a54cdd8c48baaa8b022f",
+  "deployedAt": "2026-11-19T09:07:05.192Z"
+}
